@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django_sage_ticket.ticket.helper import ExtenstionsEnum
-from ..helper.mixins import TimeStampMixin
+from django_sage_ticket.ticket.helper.mixins import TimeStampMixin
 
 
 class Attachment(TimeStampMixin):
@@ -35,8 +35,8 @@ class Attachment(TimeStampMixin):
     )
 
     class Meta:
-        verbose_name = _("attachment")
-        verbose_name_plural = _("attachments")
+        verbose_name = _("Attachment")
+        verbose_name_plural = _("Attachments")
         db_table = "attachment"
 
     def __repr__(self):

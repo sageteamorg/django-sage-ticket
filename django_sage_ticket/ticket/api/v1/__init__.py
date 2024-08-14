@@ -1,11 +1,11 @@
-from .Serializers import (
+from .serializers import (
     IssueSerializer,
     CommentSerializer,
     AttachmentSerializer,
     DepartmentSerializer,
 )
 
-from .Views import IssueViewSet, CommentViewSet, AttachmentViewSet, DepartmentViewSet
+from .views import IssueViewSet, CommentViewSet, AttachmentViewSet, DepartmentViewSet
 
 __all__ = [
     "IssueSerializer",

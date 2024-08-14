@@ -1,4 +1,4 @@
-from .ticket import IssueViewSet
+from .issue import IssueViewSet
 from .department import DepartmentViewSet
 from .comment import CommentViewSet
 from .attachment import AttachmentViewSet
