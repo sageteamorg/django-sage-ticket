@@ -10,11 +10,11 @@ from sage_ticket.design.state import (
 )
 from sage_ticket.helper.choice import TicketStateEnum
 from sage_ticket.helper.exception import (
-    InvalidHoldStateOperation ,
-    InvalidNewStateOperation ,
-    InvalidOpenStateOperation ,
-    InvalidPendingStateOperation ,
-    InvalidResolvedStateOperation ,
+    InvalidHoldStateOperation,
+    InvalidNewStateOperation,
+    InvalidOpenStateOperation,
+    InvalidPendingStateOperation,
+    InvalidResolvedStateOperation,
 )
 
 
@@ -39,27 +39,27 @@ class TestStateTransitions:
     def test_invalid_transitions(self):
         ticket = TicketState(NewState())
 
-        with pytest.raises(InvalidResolvedStateOperation ):
+        with pytest.raises(InvalidResolvedStateOperation):
             ticket.set_resolved()
 
         ticket.set_open()
-        with pytest.raises(InvalidNewStateOperation ):
+        with pytest.raises(InvalidNewStateOperation):
             ticket.set_new()
 
         ticket.set_pending()
-        with pytest.raises(InvalidOpenStateOperation ):
+        with pytest.raises(InvalidOpenStateOperation):
             ticket.set_open()
 
         ticket.set_hold()
-        with pytest.raises(InvalidPendingStateOperation ):
+        with pytest.raises(InvalidPendingStateOperation):
             ticket.set_pending()
 
         ticket.set_resolved()
-        with pytest.raises(InvalidHoldStateOperation ):
+        with pytest.raises(InvalidHoldStateOperation):
             ticket.set_hold()
 
         ticket.set_closed()
-        with pytest.raises(InvalidPendingStateOperation ):
+        with pytest.raises(InvalidPendingStateOperation):
             ticket.set_pending()
 
 

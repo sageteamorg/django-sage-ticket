@@ -9,11 +9,11 @@ from sage_ticket.design.state import (
     TicketState,
 )
 from sage_ticket.helper.exception import (
-    InvalidHoldStateOperation ,
-    InvalidNewStateOperation ,
-    InvalidOpenStateOperation ,
-    InvalidPendingStateOperation ,
-    InvalidResolvedStateOperation ,
+    InvalidHoldStateOperation,
+    InvalidNewStateOperation,
+    InvalidOpenStateOperation,
+    InvalidPendingStateOperation,
+    InvalidResolvedStateOperation,
     InvalidStateException,
 )
 
@@ -21,7 +21,7 @@ from sage_ticket.helper.exception import (
 class TestStateExceptions:
     def test_invalid_new_state_operation(self):
         ticket = TicketState(OpenState())
-        with pytest.raises(InvalidNewStateOperation ) as excinfo:
+        with pytest.raises(InvalidNewStateOperation) as excinfo:
             ticket.set_new()
         assert (
             str(excinfo.value)
@@ -30,7 +30,7 @@ class TestStateExceptions:
 
     def test_invalid_open_state_operation(self):
         ticket = TicketState(PendingState())
-        with pytest.raises(InvalidOpenStateOperation ) as excinfo:
+        with pytest.raises(InvalidOpenStateOperation) as excinfo:
             ticket.set_open()
         assert (
             str(excinfo.value)
@@ -39,7 +39,7 @@ class TestStateExceptions:
 
     def test_invalid_pending_state_operation(self):
         ticket = TicketState(HoldState())
-        with pytest.raises(InvalidPendingStateOperation ) as excinfo:
+        with pytest.raises(InvalidPendingStateOperation) as excinfo:
             ticket.set_pending()
         assert (
             str(excinfo.value)
@@ -48,7 +48,7 @@ class TestStateExceptions:
 
     def test_invalid_hold_state_operation(self):
         ticket = TicketState(ResolvedState())
-        with pytest.raises(InvalidHoldStateOperation ) as excinfo:
+        with pytest.raises(InvalidHoldStateOperation) as excinfo:
             ticket.set_hold()
         assert (
             str(excinfo.value)
@@ -57,7 +57,7 @@ class TestStateExceptions:
 
     def test_invalid_resolved_state_operation(self):
         ticket = TicketState(NewState())
-        with pytest.raises(InvalidResolvedStateOperation ) as excinfo:
+        with pytest.raises(InvalidResolvedStateOperation) as excinfo:
             ticket.set_resolved()
         assert (
             str(excinfo.value)

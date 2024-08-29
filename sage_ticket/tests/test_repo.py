@@ -12,7 +12,7 @@ class TestTicketDataGenerator:
     def test_create_departments(self, generator):
         departments = generator.create_department(2)
         assert len(departments) == 2
-        assert Department.objects.count() !=0
+        assert Department.objects.count() != 0
 
     def test_create_issues(self, generator):
         users = generator.create_users(10)
@@ -20,7 +20,7 @@ class TestTicketDataGenerator:
 
         issues = generator.create_issue(10, users, departments)
         assert len(issues) == 10
-        assert Issue.objects.count() !=0
+        assert Issue.objects.count() != 0
 
     def test_create_comments(self, generator):
         users = generator.create_users(10)
@@ -29,4 +29,4 @@ class TestTicketDataGenerator:
 
         comments = generator.create_comment(10, users, issues)
         assert len(comments) == 10
-        assert Comment.objects.count() !=0
+        assert Comment.objects.count() != 0
